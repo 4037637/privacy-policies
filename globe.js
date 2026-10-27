@@ -360,19 +360,28 @@
   addEventListener('pointerup', release);
   addEventListener('pointercancel', release);
 
+  // Холст — ровно окно в точках CSS: `100vh` на телефоне выше окна (строка адреса), и
+  // растянутый холст сплющил бы шар и сдвинул его с места.
+  let dpr = 1,
+    width = 0,
+    height = 0;
   function resize() {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    canvas.width = Math.round(innerWidth * dpr);
-    canvas.height = Math.round(innerHeight * dpr);
+    if (width === innerWidth && height === innerHeight) return;
+    width = innerWidth;
+    height = innerHeight;
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
   }
-  addEventListener('resize', resize);
   resize();
 
   let lastFrame = performance.now();
   function draw(now) {
     step(now - lastFrame);
     lastFrame = now;
-    const dpr = canvas.width / innerWidth;
+    resize();
     if (burstAt !== null && now - burstAt > BURST_MS + REBORN_MS) reborn();
     const burst = burstAt === null ? 0 : Math.min(1, (now - burstAt) / BURST_MS);
     const spread = 1 + BURST_REACH * smooth(burst);
