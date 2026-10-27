@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glexoria</title>
+<meta name="description" content="Glexoria is an independent studio making small, sharp physics games for phones.">
+<link rel="icon" href="assets/icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Glexoria home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="9" fill="#f2c14e"/>
+        <ellipse cx="16" cy="16" rx="15" ry="5" fill="none" stroke="#8b7cf6" stroke-width="2" transform="rotate(-20 16 16)"/>
+      </svg>
+      GLEXORIA
+    </a>
+    <nav class="nav">
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="stars"></div>
+    <div class="wrap">
+      <div>
+        <h1>Worlds you can <em>throw around</em></h1>
+        <p>Glexoria is an independent studio making small, sharp physics games for phones.</p>
+        <a class="button" href="#games">Our games</a>
+      </div>
+      <div class="globe-cell">
+        <div class="globe-home" id="globe-home"></div>
+        <div class="hint">DRAG · PINCH OR SCROLL · TAP TO POP</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="games">
+    <div class="wrap">
+      <h2 class="label">Games</h2>
+      <a class="game-card" href="planets/index.html">
+        <img src="assets/feature.webp" alt="Planets vs Black Holes" width="1024" height="500">
+        <div class="body">
+          <h3>Planets vs Black Holes</h3>
+          <p class="sub">Space pool for 1 or 2 players</p>
+          <p class="soon">Coming soon to Google Play &amp; App Store</p>
+          <span class="button">Learn more</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div>Contact: <a href="mailto:4037637@gmail.com">4037637@gmail.com</a></div>
+    <div class="links">
+      <a href="https://glexoria.com/planets/privacy">Privacy</a>
+      <span>© 2026 Glexoria</span>
+    </div>
+  </div>
+</footer>
+
+<script src="globe.js"></script>
+</body>
+</html>
