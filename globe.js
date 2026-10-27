@@ -40,14 +40,15 @@
   const SEED = 20261009;
 
   const MAX_SCALE = 1;
-  const MIN_SCALE = 0.2;
+  /** Шар меньше этой доли своего размера не ужимается: колесом мыши — до 0,2, щипком — до 0,5. */
+  const MIN_SCALE = matchMedia('(pointer: coarse)').matches ? 0.5 : 0.2;
   const RETURN_TAU_MS = 300;
   const TAP_SLOP = 10;
   const TAP_MS = 300;
   /** Колесо: на сколько меняется размер за пиксель прокрутки. */
   const WHEEL_RATE = 0.005;
-  /** Щипок действует сильнее разводки пальцев: весь размах — за одно движение. */
-  const PINCH_POWER = 2.5;
+  /** Щипок меняет размер чуть сильнее разводки пальцев. */
+  const PINCH_POWER = 1.2;
   /** Лопнувший шар: пузыри разлетаются столько мс, потом пауза до нового шара. */
   const BURST_MS = 700;
   const REBORN_MS = 600;
